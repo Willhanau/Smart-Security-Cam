@@ -7,6 +7,21 @@
         "wifi-password": {
             "help": "WiFi Password",
             "value": "\"PASSWORD_HERE\""
+        },
+        "twilio-api-url": {
+            "help": "Twilio API Url for your account",
+            "value": "\"TWILIO_API_URL_HERE\""
+        },
+        "twilio-basic-auth": {
+            "help": "Twilio Basic Auth",
+            "value": "\"BASIC_AUTH_STRING_HERE\""
+        },
+        "twilio-request-body": {
+            "help": "Twilio x-www-form-urlencoded Request Body",
+            "value": "\"REQUEST_BODY_HERE\""
+        },
+        "main-stack-size": {
+            "value": 8192
         }
     },
     "target_overrides": {
@@ -22,5 +37,9 @@
         "UBLOX_EVK_ODIN_W2": {
             "target.device_has": ["EMAC"]
         }
-    }
+    },
+    "macros": [
+        "MBEDTLS_TEST_NULL_ENTROPY",
+        "MBEDTLS_NO_DEFAULT_ENTROPY_SOURCES"
+    ]
 }
