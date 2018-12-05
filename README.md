@@ -47,10 +47,17 @@ This program uses the X-NUCLEO-IDW01M1 wifi module, however other modules may be
 
 # Reference and Guides used
 Example Wifi Program by ARMmbed: https://github.com/ARMmbed/mbed-os-example-wifi
+
 Wifi Driver: https://github.com/ARMmbed/wifi-x-nucleo-idw01m1
+
 Wifi module setup: https://www.st.com/en/embedded-software/x-cube-wifi1.html
+
 Wifi module firmware: https://www.st.com/content/st_com/en/products/embedded-software/wireless-connectivity-software/stsw-wifi001.html
+
 Wifi Training by ARM: https://www.st.com/content/ccc/resource/sales_and_marketing/presentation/product_presentation/group0/d9/23/1a/c2/0c/55/46/2c/STSW-IDW002%20Wifi%20hands-on%20training/files/stsw-idw002_wifi_training.pdf/jcr:content/translations/en.stsw-idw002_wifi_training.pdf
+
 Library used to make HTTP requests in mbed os: https://os.mbed.com/teams/sandbox/code/mbed-http/
+
 Twilio Docs: https://www.twilio.com/docs/
+
 Postman App: https://www.getpostman.com/
