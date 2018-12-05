@@ -37,6 +37,7 @@ Camera Module: OV7670 without FIFO buffer
 ***If the above does not make sense to you please use Postman(https://www.getpostman.com/) and practice making API requests to twilio. Once you have a working API request using Postman be sure to look at the code by clicking the "code" button in Postman to get the Basic auhtorization string to use.***
 
 17. REQUEST_BODY_HERE is the x-www-form-urlencoded request body.
+
 ***Example: To=%2B13215699874&From=%2B13215699875&MediaUrl=https%3A%2F%2Fdemo.twilio.com%2Fowl.png&Body=Hello+From+Nucleo+Board!***
 
 ***You can use Postman to get this x-www-form-url encoded body once you successfully get an API request by clicking "Code" in Postman.***
