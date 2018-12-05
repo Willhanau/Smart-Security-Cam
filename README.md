@@ -2,7 +2,9 @@
 
 ## Components Used
 Board: NUCLEO-F401RE
+
 Wifi Module: X-NUCLEO-IDW01M1 (FirmWare: 3.5.3)
+
 Camera Module: OV7670 without FIFO buffer
 
 ## How to compile and run code
