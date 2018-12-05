@@ -10,6 +10,7 @@ Camera Module: OV7670 without FIFO buffer
 2. Upper right hand corner, to the right of the "Compiler" button, hover over the person icon
 3. In the drop down menu, click on "My code"
 4. In the center of the screen click on "Add GitHub repository"
+
 ***Note: You will have to fork this GitHub repo if you are not a contributor, before adding it.***
 
 5. Enter the required info on the screen.
@@ -24,18 +25,24 @@ Camera Module: OV7670 without FIFO buffer
 13. SSID_HERE is the name of your Wifi access point you wish to connect to.
 14. PASS_WORD_HERE is the password for the Wifi access point you wish to conncet to.
 15. TWILIO_API_URL_HERE is the twilio api url with your accound ID.
+
 ***For more information refer to: https://support.twilio.com/hc/en-us/articles/223133907-Simple-Example-for-Sending-Programmable-SMS-Text-or-Picture-Messages***
 
 16. BASIC_AUTH_STRING_HERE is your basic authorization Account SID and Twilio api key encoded string.
+
 ***Note: The string starts with Basic.***
+
 ***Example: Basic qweqjbnwejkqbjkqweqkwjeqklwj***
+
 ***If the above does not make sense to you please use Postman(https://www.getpostman.com/) and practice making API requests to twilio. Once you have a working API request using Postman be sure to look at the code by clicking the "code" button in Postman to get the Basic auhtorization string to use.***
 
 17. REQUEST_BODY_HERE is the x-www-form-urlencoded request body.
 ***Example: To=%2B13215699874&From=%2B13215699875&MediaUrl=https%3A%2F%2Fdemo.twilio.com%2Fowl.png&Body=Hello+From+Nucleo+Board!***
+
 ***You can use Postman to get this x-www-form-url encoded body once you successfully get an API request by clicking "Code" in Postman.***
 
 18. Once all the above are set you may now compile. Be sure to select the NUCLEO-F401RE board in the upper right hand corner.
+
 ***Note: Other board type may work but testing was done using the above mentioned board.***
 
 19. Once the binary is downloaded, drag and drop it onto your board.
