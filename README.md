@@ -40,7 +40,7 @@ Camera Module: OV7670 without FIFO buffer
 
 ***Example: To=%2B13215699874&From=%2B13215699875&MediaUrl=https%3A%2F%2Fdemo.twilio.com%2Fowl.png&Body=Hello+From+Nucleo+Board!***
 
-***You can use Postman to get this x-www-form-url encoded body once you successfully get an API request by clicking "Code" in Postman.***
+***You can use Postman to get this x-www-form-url encoded body once you successfully get an API request working. Just click on "Code" in Postman.***
 
 18. Once all the above are set you may now compile. Be sure to select the NUCLEO-F401RE board in the upper right hand corner.
 
