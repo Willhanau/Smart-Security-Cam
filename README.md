@@ -78,6 +78,6 @@ Library used to make HTTP requests in mbed os: https://os.mbed.com/teams/sandbox
 
 Postman App: https://www.getpostman.com/
 
-Twilio Docs: https://www.twilio.com/docs/
+Twilio SMS API: https://www.twilio.com/docs/sms/send-messages
 
-https://cloud.google.com/vision/docs/request#providing_the_image
+Google Vision API: https://cloud.google.com/vision/docs/request#providing_the_image
