@@ -133,7 +133,8 @@ int main() {
     if(Connect_to_Wifi(wifi) == 1){
         printf("\nConnection to Wifi was SUCCESSFUL!\n");    
     } else{
-        printf("\nConnection to wifi FAILED...\n");        
+        printf("\nConnection to wifi FAILED...\n");
+        return -1;
     }
     
     //Send a http request to the Twilio REST API
