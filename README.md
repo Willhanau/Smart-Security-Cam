@@ -18,7 +18,7 @@ Camera Module: OV7670 without FIFO buffer
 5. Enter the required info on the screen.
 6. The repo should now be in your list of repositories in your mbed console.
 7. Click on the added GitHub repository.
-8. On the right hand side, under "Repository toolbox" select "Impoort to Compiler".
+8. On the right hand side, under "Repository toolbox" select "Import to Compiler".
 9. You will now be redirected to the mbed os online compiler where you can view, edit, and compile the project.
 10. Right click the added repo and add a new file called "mbed_app.json".
 11. Select "mbed_app_example.json" and copy the contents to "mbed_app.json" we just created.
