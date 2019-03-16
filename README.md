@@ -85,12 +85,12 @@ Twilio SMS API: https://www.twilio.com/docs/sms/send-messages
 
 Google Vision API: https://cloud.google.com/vision/docs/request#providing_the_image
 
-##Camera module
+## Camera module
 Guide: https://os.mbed.com/users/pm21gt/notebook/linksprite-jpeg-color-camera-ttl-infrared/
 
 Library: https://os.mbed.com/users/yamaguch/code/JPEGCamera/
 
-##SD Card Storage and mbed Fat File System
+## SD Card Storage and mbed Fat File System
 SD Storage: https://github.com/ARMmbed/mbed-os-example-blockdevice
 
 File System: https://github.com/ARMmbed/mbed-os-example-filesystem
