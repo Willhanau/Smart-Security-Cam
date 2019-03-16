@@ -148,7 +148,11 @@ int main() {
         printf("\nConnection to Wifi was SUCCESSFUL!\n");    
     } else{
         printf("\nConnection to wifi FAILED...\n");
+<<<<<<< HEAD
         return -1;       
+=======
+        return -1;
+>>>>>>> df1eab44af0b40dbf69143080d2dad1704a1b5e3
     }
     
     // Try to mount the filesystem
@@ -200,7 +204,13 @@ int main() {
     wifi->disconnect();
     printf("\nDone: Wifi has successfully disconnected.\n");
     
+<<<<<<< HEAD
     //Blink_LED();
     printf("\nFinished\n");
     return 0;
 }
+=======
+    
+    Blink_LED();
+}
+>>>>>>> df1eab44af0b40dbf69143080d2dad1704a1b5e3
