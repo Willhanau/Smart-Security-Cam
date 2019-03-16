@@ -1,7 +1,7 @@
 # Smart-Security-Cam
 
 ## Components Used
-Board: NUCLEO-F401RE
+Board: NUCLEO-F411RE
 
 Wifi Module: X-NUCLEO-IDW01M1 (FirmWare: 3.5.3)
 
