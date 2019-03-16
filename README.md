@@ -5,7 +5,10 @@ Board: NUCLEO-F401RE
 
 Wifi Module: X-NUCLEO-IDW01M1 (FirmWare: 3.5.3)
 
-Camera Module: OV7670 without FIFO buffer
+Camera Module: LS-Y201 TTL (JPEG Camera with Infrared)
+
+SD Card Module: Gikfun SD Storage Board
+SD Flash Memory Storage: 16GB SanDisk Mobile Class4 MicroSDHC
 
 ## How to compile and run code
 1. Login to https://console.mbed.com/
@@ -81,3 +84,13 @@ Postman App: https://www.getpostman.com/
 Twilio SMS API: https://www.twilio.com/docs/sms/send-messages
 
 Google Vision API: https://cloud.google.com/vision/docs/request#providing_the_image
+
+##Camera module
+Guide: https://os.mbed.com/users/pm21gt/notebook/linksprite-jpeg-color-camera-ttl-infrared/
+
+Library: https://os.mbed.com/users/yamaguch/code/JPEGCamera/
+
+##SD Card Storage and mbed Fat File System
+SD Storage: https://github.com/ARMmbed/mbed-os-example-blockdevice
+
+File System: https://github.com/ARMmbed/mbed-os-example-filesystem
