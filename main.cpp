@@ -1,7 +1,19 @@
 #include "mbed.h"
 #include "https_request.h"
+#include "JPEGCamera.h"
+#include "SDBlockDevice.h"
+#include "FATFileSystem.h"
 
-DigitalOut myled(LED1);
+JPEGCamera camera(PA_11, PA_12); // TX, RX
+SDBlockDevice *bd = new SDBlockDevice(
+        MBED_CONF_SD_SPI_MOSI,
+        MBED_CONF_SD_SPI_MISO,
+        MBED_CONF_SD_SPI_CLK,
+        MBED_CONF_SD_SPI_CS);
+
+FATFileSystem fs("local");
+
+//DigitalOut myled(LED1);
 WiFiInterface *wifi;
 
 const char SSL_CA_PEM[] = "-----BEGIN CERTIFICATE-----\n"
@@ -48,7 +60,7 @@ const char SSL_CA_PEM[] = "-----BEGIN CERTIFICATE-----\n"
                         "AfvDbbnvRG15RjF+Cv6pgsH/76tuIMRQyV+dTZsXjAzlAcmgQWpzU/qlULRuJQ/7\n"
                         "TBj0/VLZjmmx6BEP3ojY+x1J96relc8geMJgEtslQIxq/H5COEBkEveegeGTLg==\n"
                         "-----END CERTIFICATE-----\n";
-
+/*
 void Blink_LED(){
     while(1) {
         myled = 1; // LED is ON
@@ -57,6 +69,7 @@ void Blink_LED(){
         wait(1.0); // 1 sec
     } 
 }
+*/
 
 int Connect_to_Wifi(WiFiInterface *wifi){
     printf("\nConnecting to %s...\n", MBED_CONF_APP_WIFI_SSID);
@@ -116,6 +129,7 @@ void Google_Cloud_Vision_https_Request(NetworkInterface *network){
 }
 
 int main() {
+    
     printf("\fSmart Security Cam V1.0\n");
 
 #ifdef MBED_MAJOR_VERSION
@@ -133,19 +147,60 @@ int main() {
     if(Connect_to_Wifi(wifi) == 1){
         printf("\nConnection to Wifi was SUCCESSFUL!\n");    
     } else{
-        printf("\nConnection to wifi FAILED...\n");        
+        printf("\nConnection to wifi FAILED...\n");
+        return -1;       
+    }
+    
+    // Try to mount the filesystem
+    printf("Mounting the filesystem... ");
+    fflush(stdout);
+    int err = fs.mount(bd);
+    printf("%s\n", (err ? "Fail :(" : "OK"));
+    if (err) {
+        // Reformat if we can't mount the filesystem
+        // this should only happen on the first boot
+        printf("No filesystem found, formatting... ");
+        fflush(stdout);
+        err = fs.reformat(bd);
+        printf("%s\n", (err ? "Fail :(" : "OK"));
+        if (err) {
+            error("error: %s (%d)\n", strerror(-err), err);
+            return -1;
+        }
+    }
+    
+    //Take 4 pictures
+    wait(4);
+    //camera.setPictureSize(JPEGCamera::SIZE320x240, 1);
+    camera.setPictureSize(JPEGCamera::SIZE640x480, 1);
+    for (int i = 0; i < 1; i++) {
+        printf("Camera state: %d \n", camera.isReady());
+        if(camera.isReady()){
+            char filename[32];
+            sprintf(filename, "/local/pict%03d.jpg", i);
+            printf("Take Picture: %d", camera.takePicture(filename));
+            
+            while (camera.isProcessing()) {
+                printf("Current address being processed: %d \n", camera.address);
+                camera.processPicture();
+            }
+        }
+        else{
+            printf("camera is not ready\n");
+        }
     }
     
     //Send a http request to the Twilio REST API
-    Twilio_https_Request(wifi);
+    Google_Cloud_Vision_https_Request(wifi);
     
     //Send a http request to the Twilio REST API
-    Google_Cloud_Vision_https_Request(wifi);
+    Twilio_https_Request(wifi);
     
     //Disconnect from wifi access point
     wifi->disconnect();
     printf("\nDone: Wifi has successfully disconnected.\n");
     
-    
-    Blink_LED();
+    //Blink_LED();
+    printf("\nFinished\n");
+    return 0;
 }
