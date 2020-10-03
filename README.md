@@ -33,7 +33,7 @@ SD Flash Memory Storage: 16GB SanDisk Mobile Class4 MicroSDHC
 
 ***For more information refer to: https://support.twilio.com/hc/en-us/articles/223133907-Simple-Example-for-Sending-Programmable-SMS-Text-or-Picture-Messages***
 
-16. YOUR_BASIC_AUTH_STRING_HERE is your basic authorization Account SID and Twilio api key encoded string.
+16. YOUR_BASIC_AUTH_STRING_HERE is "Twilio_Account_SID:Twilio_api_auth_token" encoded into a base64 string.
 
 ***Note: The string starts with Basic.***
 
